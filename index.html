@@ -6,6 +6,43 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+        <script type="text/javascript" >
+            function onRpassEvent(){
+                var rpass1 = document.getElementById("rpass1");
+                var rpass2 = document.getElementById("rpass2");
+                var rpass = document.getElementById("rpass");
+
+                if(rpass.type==="password"){
+                    rpass.type="text";
+                    rpass1.style.display="inline-flex";
+                    rpass1.style.justifyContent="end";
+                    rpass2.style.display="none";
+                }else{
+                    rpass.type="password";
+                    rpass1.style.display="none";
+                    rpass2.style.display="inline";
+                }
+
+            }
+            function onPassEvent(){
+                var pass1 = document.getElementById("pass1");
+                var pass2 = document.getElementById("pass2");
+                var pass = document.getElementById("pass");
+
+                if(pass.type==="password"){
+                    pass.type="text";
+                    pass1.style.display="inline";
+                    pass2.style.display="none";
+                }else{
+                    pass.type="password";
+                    pass1.style.display="none";
+                    pass2.style.display="inline";
+                }
+
+            }
+        </script>
     </head>
     <body>
         <div class="container">
@@ -13,12 +50,31 @@
             <img src="netflixlogo.png" height="250px" width="170px"/>
 
             <h4 class="white-head">Start your free 30 days trial</h4>
-            <input type="text" class="input-item" minlength="4" maxlength="8" placeholder="Email or phone number" required/>
-            <input type="password" class="input-item" minlength="6" maxlength="12" placeholder="Password" required/>
-            <input type="password" class="input-item" minlength="6" maxlength="12" placeholder="Repeat password" required/>
+            <div class="box-container">
 
-            <button class="red-btn"> SIGN UP</button>
-            <button class="dark-red-btn">SIGN IN</button>
+                <span style="margin-top: 10px;"><i class="bi bi-person" style="color: rgb(58, 58, 58); font-size: 20px; display: inline;"></i></span>
+                <input type="text" class="input-item" minlength="4" maxlength="12" placeholder="Email or phone number" required/>
+            </div>
+            <div class="box-container">
+                <span style="margin-top: 10px;"><i class="bi bi-file-lock"style="color: rgb(58, 58, 58); font-size: 20px;"></i></span>
+                <input id="pass" type="password" class="input-item" minlength="6" maxlength="12" placeholder="Password" required/>
+                <span style="margin-left:auto; margin-top: 10px;" onclick="onPassEvent()">
+                    <i id="pass2" class="bi bi-eye-slash" style="color: rgb(58, 58, 58); font-size: 20px;" ></i>
+                    <i id="pass1" class="bi bi-eye" style="color: rgb(58, 58, 58); font-size: 20px;"></i>
+                </span>
+            </div>
+            <div class="box-container">
+                <span style="margin-top: 10px;"><i class="bi bi-file-lock" style="color: rgb(58, 58, 58); font-size: 20px; "></i></span>
+                <input id="rpass" type="password" class="input-item" minlength="6" maxlength="12" placeholder="Repeat password" required/>
+                <span style="margin-left:auto; margin-top: 10px;" onclick="onRpassEvent()">
+                    <i id="rpass2" class="bi bi-eye-slash" style="color: rgb(58, 58, 58); font-size: 20px;" ></i>
+                    <i id="rpass1" class="bi bi-eye" style="color: rgb(58, 58, 58); font-size: 20px;"></i>
+                </span>
+            </div>
+            <div class="all-btns">
+                <button class="red-btn">SIGN UP</button><br>
+                <button class="btn">SIGN IN</button>
+            </div>
 
         </div>
 	
